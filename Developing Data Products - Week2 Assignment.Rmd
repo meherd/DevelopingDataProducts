@@ -1,0 +1,40 @@
+---
+title: "Developing Data Products - Week2 Assignment"
+author: "meherd"
+date: "April 12, 2017"
+output:
+  ioslides_presentation:
+    fig_caption: yes
+    keep_md: yes
+  slidy_presentation: default
+---
+
+##Seattle Attractions - April 16, 2017
+
+```{r echo=FALSE,warning=FALSE,comment=FALSE}
+knitr::opts_chunk$set(echo = FALSE,eval = FALSE)
+library(leaflet)
+Seattle_attractions <- c("Space Needle","Seattle Center", "Pike Place Market", "University of Washington", "Chihuly Garden", "Ballard Locks","Woodland Park Zoo")
+                                  
+df<-data.frame(lat=c(47.620422,47.616556, 47.6101359, 47.655548,47.6206,47.6592773629,47.6682 ),
+                                  
+                                  lng=c(-122.349358,-122.343325, -122.3420567, -122.303200,-122.3505,-122.391591767,-122.3508))                                 
+                                  
+
+
+df%>%
+  leaflet() %>%
+  
+  addTiles() %>%
+  addMarkers(popup=Seattle_attractions)
+  
+```
+
+
+
+
+
+
+
+
+
