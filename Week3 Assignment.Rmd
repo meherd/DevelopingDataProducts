@@ -1,0 +1,19 @@
+---
+title: "Plotly Assignment"
+author: "meherd"
+date: "April 19, 2017"
+output:
+  ioslides_presentation:
+    fig_caption: yes
+    keep_md: yes
+  slidy_presentation: default
+---
+
+##Cars-hp vs mpg
+```{r,echo=FALSE,message=FALSE,warning=FALSE}
+library(plotly)
+plot_ly(mtcars, x = mtcars$hp, y = mtcars$mpg, mode="markers", size = mtcars$wt,color =mtcars$disp)
+```
+
+
+
