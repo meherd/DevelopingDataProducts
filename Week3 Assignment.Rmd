@@ -9,7 +9,7 @@ output:
   slidy_presentation: default
 ---
 
-##Cars-hp vs mpg
+##Cars-hp vs mpg - April 22 2017
 ```{r,echo=FALSE,message=FALSE,warning=FALSE}
 library(plotly)
 p<-plotly::plot_ly(mtcars, x = mtcars$hp, y = mtcars$mpg, mode="markers", size = mtcars$wt,color =mtcars$disp)%>%
