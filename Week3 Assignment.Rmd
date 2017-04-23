@@ -12,7 +12,9 @@ output:
 ##Cars-hp vs mpg
 ```{r,echo=FALSE,message=FALSE,warning=FALSE}
 library(plotly)
-plot_ly(mtcars, x = mtcars$hp, y = mtcars$mpg, mode="markers", size = mtcars$wt,color =mtcars$disp)
+p<-plotly::plot_ly(mtcars, x = mtcars$hp, y = mtcars$mpg, mode="markers", size = mtcars$wt,color =mtcars$disp)%>%
+  plotly::layout(xaxis = list(title="hp"),yaxis=list(title="mpg"))
+p
 ```
 
 
