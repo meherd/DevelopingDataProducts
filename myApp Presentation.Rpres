@@ -1,0 +1,43 @@
+My Shiny App Presentation 
+========================================================
+author: meherd
+date: April 27, 2017
+autosize: true
+
+Overview:
+========================================================
+
+- The Joyner–Boore Attenuation Data: 
+This data gives peak accelerations measured at various observation stations for 23 earthquakes in California. The data have been used by various workers to estimate the attenuating affect of distance on ground acceleration.
+- A data frame with 182 observations on these 5 variables.
+
+1.	event (Event Number)
+2.	mag	(Moment Magnitude)
+3.  station	(Station Number)
+4.	dist (Station-hypocenter distance (km))
+5.  accel (Peak acceleration (g))
+
+Source
+
+Joyner, W.B., D.M. Boore and R.D. Porcella (1981). Peak horizontal acceleration and velocity from strong-motion records including records from the 1979 Imperial Valley, California earthquake. USGS Open File report 81-365. Menlo Park, Ca.
+Summary 
+========================================================
+
+```{r,echo=FALSE,warning=FALSE}
+summary(attenu)
+head(attenu)
+```
+
+Model 
+========================================================
+
+```{r, echo=FALSE,warning=FALSE}
+model<-lm(mag~accel,data = attenu)
+model
+ plot(attenu$accel, attenu$mag, xlab = "Peak Acceleration",
+         ylab = "Magnitude",main = "Peak Accleration vs Magnitude",abline(model, col = "red", lwd = 2))
+```
+Source
+==========================================================
+Joyner, W.B., D.M. Boore and R.D. Porcella (1981). Peak horizontal acceleration and velocity from strong-motion records including records from the 1979 Imperial Valley, California earthquake. USGS Open File report 81-365. Menlo Park, Ca.
+Summary of attenu data
